@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 const events = [
-  { id: 1, name: "Rock Concert", location: "New York, USA", date: "2024-12-15", image: "freepik-music-band-ticket-4056197-20241204230635nFMV.png" },
-  { id: 2, name: "Pop Concert", location: "London, UK", date: "2024-12-20", image: "https://via.placeholder.com/400x250" },
+  { id: 1, name: "Rock Concert", location: "Birmingham Symphony Hall | Birmingham", date: "2024-12-15", image: "Asking.jpg" },
+  { id: 2, name: "Pop Concert", location: "London, UK", date: "2024-12-15", image: "Luvcat.jpg" },
   // Add more events here
 ];
 
