@@ -1,23 +1,27 @@
-import { useState } from 'react'
-import Navbar from './Components/NavBar'
-import Carousel from './Components/Carousal'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Carousel from "./Components/Carousal";
+import EventDetails from "./Components/EventDetails";
+import Confirmation from "./Components/Confirmation";
+import Navbar from "./Components/NavBar";
+import EventList from "./Components/EventList";
+import CheckoutPage from "./Components/CheckoutPage";
 
-
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div className="App">
+    <Router>
       <Navbar />
-      <Carousel />
-      {/* Add other components or content */}
-      <main className="mt-16 p-4">
-        <h1 className="text-4xl text-white text-center">Welcome to Ticket Master</h1>
-      </main>
-    </div>
-    </>
-  )
-}
+      <div className="bg-black text-white">        
+        {/* These Routes define separate pages */}
+        <Routes>
+          <Route path="/" element={<Carousel />} />
+          <Route path="/event" element={<EventList />} />
+          <Route path="/event/:id" element={<EventDetails />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/confirmation" element={<Confirmation />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
-export default App
+export default App;
