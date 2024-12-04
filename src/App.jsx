@@ -5,6 +5,7 @@ import Confirmation from "./Components/Confirmation";
 import Navbar from "./Components/NavBar";
 import EventList from "./Components/EventList";
 import CheckoutPage from "./Components/CheckoutPage";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 };

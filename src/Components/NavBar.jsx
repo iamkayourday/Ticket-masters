@@ -16,7 +16,7 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 w-full backdrop-blur-md border-b border-white/10 shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-12">
         {/* Logo */}
-        <div className="text-2xl font-bold text-white">Abdulbasit</div>
+        <div className="text-2xl font-bold text-white">Ticket commander</div>
 
         {/* Menu Button (Visible on Mobile Only) */}
         <button
