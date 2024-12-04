@@ -7,7 +7,7 @@ const EventDetails = () => {
   const events = [
     {
       id: 1,
-      name: "Rock Concert",
+      name: "Asking Alexandria",
       location: "Birmingham Symphony Hall | Birmingham",
       date: "2024-12-15",
       description: "A great concert!",

@@ -14,7 +14,7 @@ const Footer = () => {
           </div>
 
           {/* Useful Links Section */}
-          <div>
+          {/* <div>
             <h3 className="text-xl font-semibold mb-4">Useful Links</h3>
             <ul>
               <li className="mb-2">
@@ -38,10 +38,10 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Social Media Section */}
-          <div>
+          {/* <div>
             <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a
@@ -77,8 +77,8 @@ const Footer = () => {
                 <i className="fab fa-linkedin-in text-2xl"></i>
               </a>
             </div>
-          </div>
-        </div>
+          </div>*/}
+        </div> 
 
         {/* Footer Bottom */}
         <div className="mt-8 border-t border-gray-800 pt-4 text-center">
