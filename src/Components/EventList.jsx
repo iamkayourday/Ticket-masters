@@ -48,7 +48,7 @@ const EventList = () => {
                 to={`/event/${event.id}`}  // Navigate to EventDetails
                 className="inline-block bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition-colors duration-300"
               >
-                Book Event
+                Get Ticket
               </Link>
             </div>
           </div>
