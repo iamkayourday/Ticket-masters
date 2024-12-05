@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundClip: {
+        text: 'text', // Enables the bg-clip-text utility
+      },
+    },
   },
   plugins: [],
 }

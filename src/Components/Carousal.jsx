@@ -12,7 +12,7 @@ const Carousel = () => {
   return (
     <>
       <div className="relative">
-        <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-gray-800 mt-16">
+        <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-gray-800">
           <img
             src={image.src}
             alt="carousel"

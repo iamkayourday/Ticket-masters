@@ -22,19 +22,19 @@ const formatDate = (dateString) => {
 
 const EventList = () => {
   return (
-    <div className="min-h-screen bg-black text-white mt-4">
+    <div className="min-h-screen bg-gradient-to-b from-black via-purple-900 to-black text-white mt-4">
       {/* Header */}
       <header className="text-center py-8">
-        <h1 className="text-4xl font-bold">Events</h1>
-        <p className="text-gray-400 mt-2">Discover and book your favorite events</p>
+        <h1 className="text-5xl font-extrabold">Events</h1>
+        <p className="text-gray-400 mt-4 text-lg">Discover and book your favorite events</p>
       </header>
 
       {/* Event Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 sm:px-9">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 sm:px-9">
         {events.map((event) => (
           <div
             key={event.id}
-            className="bg-gray-900 text-white rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+            className="bg-gradient-to-b from-[#222] to-[#444] rounded-lg overflow-hidden shadow-xl transform transition duration-500 hover:scale-105 hover:shadow-2xl"
           >
             <img
               src={event.image}
@@ -42,8 +42,8 @@ const EventList = () => {
               className="w-full h-[200px] object-cover transition-transform duration-500 hover:scale-110"
             />
             <div className="p-6">
-              <h3 className="text-2xl font-semibold mb-2">{event.name}</h3>
-              <p className="text-lg text-gray-400 mb-2">
+              <h3 className="text-3xl font-bold mb-3">{event.name}</h3>
+              <p className="text-lg text-gray-400 mb-3">
                 <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
                 {event.location}
               </p>
@@ -53,7 +53,7 @@ const EventList = () => {
               </p>
               <Link
                 to={`/event/${event.id}`}
-                className="inline-flex items-center bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition-colors duration-300"
+                className="inline-flex items-center py-3 px-6 rounded-full bg-gradient-to-r from-[#B936F5] via-[#C64C85] to-[#F1005B] text-white font-semibold shadow-md hover:shadow-lg hover:opacity-90 transition-all duration-300"
               >
                 <FontAwesomeIcon icon={faTicketAlt} className="mr-2" />
                 Get Ticket

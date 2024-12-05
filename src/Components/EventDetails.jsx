@@ -212,7 +212,7 @@ const EventDetails = () => {
                 <div className="flex items-center space-x-2 mt-2">
                   <button
                     onClick={() => handleQuantityChange(ticketType, "decrease")}
-                    className="bg-blue-600 text-black px-4 py-2 rounded-md hover:bg-blue-700"
+                    className="bg-gradient-to-r from-[#B936F5] via-[#C64C85] to-[#F1005B] text-black px-4 py-2 rounded-md hover:scale-105 hover:shadow-xl"
                   >
                     -
                   </button>
@@ -221,7 +221,7 @@ const EventDetails = () => {
                   </p>
                   <button
                     onClick={() => handleQuantityChange(ticketType, "increase")}
-                    className="bg-blue-600 text-black px-4 py-2 rounded-md hover:bg-blue-700"
+                    className="bg-gradient-to-r from-[#B936F5] via-[#C64C85] to-[#F1005B] text-black px-4 py-2 rounded-md hover:scale-105 hover:shadow-xl"
                   >
                     +
                   </button>
@@ -237,7 +237,7 @@ const EventDetails = () => {
         <div className="mt-6 text-center">
           <button
             onClick={handleCheckout}
-            className="bg-yellow-500 text-black px-6 py-3 rounded-lg hover:bg-yellow-600"
+            className="bg-gradient-to-r from-[#B936F5] via-[#C64C85] to-[#F1005B] text-black px-6 py-3 rounded-lg hover:bg-gradient-to-l hover:scale-105 hover:shadow-xl"
           >
             Proceed to Checkout
           </button>
