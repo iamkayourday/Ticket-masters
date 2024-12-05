@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom"; // For navigation and event ID
+import { useNavigate, useParams } from "react-router-dom"; 
 
 const EventDetails = () => {
   const navigate = useNavigate();
-  const { id } = useParams(); // Get event ID from URL
+  const { id } = useParams(); 
   const events = [
     {
       id: 1,
@@ -124,11 +124,11 @@ const EventDetails = () => {
     },
   ];
 
-  // Find event by ID
+  
   const event = events.find(event => event.id === parseInt(id));
 
   if (!event) {
-    return <div>Event not found</div>; // If no event matches the ID, show this message
+    return <div>Event not found</div>; 
   }
 
   const [quantities, setQuantities] = useState({
@@ -173,8 +173,8 @@ const EventDetails = () => {
 
       {/* Event Details */}
       <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-        <h2 className="text-3xl font-semibold text-yellow-400 mb-4">{event.name}</h2>
-        <p className="text-lg text-gray-300 mb-2">{event.description}</p> {/* Description is unique per event */}
+        <h2 className="text-3xl font-semibold text-blue-400 mb-4">{event.name}</h2>
+        <p className="text-lg text-gray-300 mb-2">{event.description}</p> 
         <p className="text-lg text-gray-400">
           <strong>Location:</strong> {event.location}
         </p>
@@ -185,7 +185,7 @@ const EventDetails = () => {
 
       {/* Ticket Options */}
       <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-semibold text-yellow-400 mb-6">Tickets</h2>
+        <h2 className="text-2xl font-semibold text-blue-400 mb-6">Tickets</h2>
 
         {["regular", "standard", "vip"].map((ticketType) => {
           const ticketOption = event.ticketOptions.find(
@@ -212,7 +212,7 @@ const EventDetails = () => {
                 <div className="flex items-center space-x-2 mt-2">
                   <button
                     onClick={() => handleQuantityChange(ticketType, "decrease")}
-                    className="bg-yellow-500 text-black px-4 py-2 rounded-md hover:bg-yellow-600"
+                    className="bg-blue-600 text-black px-4 py-2 rounded-md hover:bg-blue-700"
                   >
                     -
                   </button>
@@ -221,7 +221,7 @@ const EventDetails = () => {
                   </p>
                   <button
                     onClick={() => handleQuantityChange(ticketType, "increase")}
-                    className="bg-yellow-500 text-black px-4 py-2 rounded-md hover:bg-yellow-600"
+                    className="bg-blue-600 text-black px-4 py-2 rounded-md hover:bg-blue-700"
                   >
                     +
                   </button>
