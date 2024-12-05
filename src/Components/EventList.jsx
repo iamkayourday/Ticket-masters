@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarAlt, faMapMarkerAlt, faTicketAlt } from "@fortawesome/free-solid-svg-icons";
 
 const events = [
   { id: 1, name: "Asking Alexandria", location: "Birmingham Symphony Hall | Birmingham", date: "2024-12-15", image: "Asking.jpg" },
@@ -10,13 +12,12 @@ const events = [
   { id: 7, name: "The Rolling People", location: "O2 Ritz Manchester | Manchester", date: "2024-12-21", image: "roll.jpg" },
   { id: 8, name: "Aurie Styla's Christmas CrackUp", location: "The Frog and Bucket | Manchester", date: "2024-12-22", image: "Austria.jpg" },
   { id: 9, name: "DLT Anti New Years", location: "Studio 338 | London", date: "2024-12-29", image: "dlt.jpg" },
-  // Add more events here
 ];
 
 const formatDate = (dateString) => {
-  const options = { weekday: 'short', day: 'numeric', month: 'short' };
+  const options = { weekday: "short", day: "numeric", month: "short" };
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', options);
+  return date.toLocaleDateString("en-US", options);
 };
 
 const EventList = () => {
@@ -42,12 +43,19 @@ const EventList = () => {
             />
             <div className="p-6">
               <h3 className="text-2xl font-semibold mb-2">{event.name}</h3>
-              <p className="text-lg text-gray-400 mb-2">{event.location}</p>
-              <p className="text-lg text-gray-400 mb-4">{formatDate(event.date)}</p>
+              <p className="text-lg text-gray-400 mb-2">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+                {event.location}
+              </p>
+              <p className="text-lg text-gray-400 mb-4">
+                <FontAwesomeIcon icon={faCalendarAlt} className="mr-2" />
+                {formatDate(event.date)}
+              </p>
               <Link
-                to={`/event/${event.id}`}  // Navigate to EventDetails
-                className="inline-block bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition-colors duration-300"
+                to={`/event/${event.id}`}
+                className="inline-flex items-center bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition-colors duration-300"
               >
+                <FontAwesomeIcon icon={faTicketAlt} className="mr-2" />
                 Get Ticket
               </Link>
             </div>
