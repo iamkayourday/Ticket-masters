@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <div className="bg-black text-white">        
+      <div className=" text-white ">        
         {/* These Routes define separate pages */}
         <Routes>
           <Route path="/" element={<Carousel />} />
