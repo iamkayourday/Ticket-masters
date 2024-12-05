@@ -90,7 +90,7 @@ const CheckoutPage = () => {
         {/* Right Column - Event Details */}
         <div className="bg-black p-6 rounded-lg shadow-lg w-full sm:w-96">
           <h2 className="text-2xl text-white mb-4">{event.name}</h2>
-          <img src={event.imageUrl || 'https://via.placeholder.com/400x200'} alt={event.name} className="w-full h-48 object-cover rounded-md mb-4" />
+          <img src={event.image} alt={event.name} className="w-full h-48 object-cover rounded-md mb-4" />
           <p className="text-white mb-2"><strong>Date:</strong> {event.date}</p>
           <p className="text-white mb-2"><strong>Location:</strong> {event.location}</p>
           <p className="text-white mb-2"><strong>Time remaining:</strong> {Math.floor(timeDifference)} minutes</p>
