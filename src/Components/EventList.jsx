@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 const events = [
   { id: 1, name: "Asking Alexandria", location: "Birmingham Symphony Hall | Birmingham", date: "2024-12-15", image: "Asking.jpg" },
   { id: 2, name: "Luvcat", location: "LEAF on Bold St. | Liverpool", date: "2024-12-15", image: "Luvcat.jpg" },
+  { id: 3, name: "Sam Fender", location: "OVO Hydro | Glasgow", date: "2024-12-16", image: "sam.jpg" },
+  { id: 4, name: "Tom Meighan", location: "O2 Forum Kentish Town | London", date: "2024-12-15", image: "Tom.jpg" },
+  { id: 5, name: "Weegie Hink Ae Panto?", location: "Oran Mor | Glasgow", date: "2024-12-20", image: "event-placeholder.jpg" },
+  { id: 6, name: "Montell Fish", location: "O2 Forum Kentish Town | London", date: "2024-12-20", image: "fish.png" },
+  { id: 7, name: "The Rolling People", location: "O2 Ritz Manchester | Manchester", date: "2024-12-21", image: "roll.jpg" },
+  { id: 8, name: "Aurie Styla's Christmas CrackUp", location: "The Frog and Bucket | Manchester", date: "2024-12-22", image: "Austria.jpg" },
+  { id: 9, name: "DLT Anti New Years", location: "Studio 338 | London", date: "2024-12-29", image: "dlt.jpg" },
   // Add more events here
 ];
 

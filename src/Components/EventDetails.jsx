@@ -1,22 +1,21 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // For navigation to checkout page
+import { useNavigate, useParams } from "react-router-dom"; // For navigation and event ID
 
 const EventDetails = () => {
-  const navigate = useNavigate(); // useNavigate for navigation
-
+  const navigate = useNavigate();
+  const { id } = useParams(); // Get event ID from URL
   const events = [
     {
       id: 1,
       name: "Asking Alexandria",
       location: "Birmingham Symphony Hall | Birmingham",
       date: "2024-12-15",
-      description: "A great concert!",
+      description: "A great concert with live music, awesome crowd, and unforgettable moments!", // Unique description
       image: "Asking.jpg",
       ticketOptions: [
-        { type: "Early", price: 10 },
+        { type: "Regular", price: 10 },
         { type: "Standard", price: 20 },
-        { type: "VIP390", price: 30 },
-        { type: "VIP515", price: 40 },
+        { type: "VIP", price: 30 },
       ],
     },
     {
@@ -24,23 +23,120 @@ const EventDetails = () => {
       name: "Luvcat",
       location: "LEAF on Bold St. | Liverpool",
       date: "2024-12-15",
-      description: "Doors: 18:30, Curfew: 22:00 Age Restrictions: Under 18s must be accompanied by an adult",
+      description: "Experience an intimate performance with amazing sound and a vibrant atmosphere.", // Unique description
       image: "Luvcat.jpg",
       ticketOptions: [
         { type: "VIP", price: 30 },
         { type: "Standard", price: 15 },
+        { type: "Regular", price: 10 },
       ],
     },
+    {
+      id: 3,
+      name: "Sam Fender",
+      location: "OVO Hydro | Glasgow",
+      date: "2024-12-16",
+      description: "Join us for an electrifying performance with high energy and an unforgettable set list.", // Unique description
+      image: "sam.jpg",
+      ticketOptions: [
+        { type: "VIP", price: 30 },
+        { type: "Standard", price: 15 },
+        { type: "Regular", price: 10 },
+      ],
+    },
+    {
+        id: 4,
+        name: "Sam Fender",
+        location: "OVO Hydro | Glasgow",
+        date: "2024-12-16",
+        description: "Join us for an electrifying performance with high energy and an unforgettable set list.", // Unique description
+        image: "sam.jpg",
+        ticketOptions: [
+          { type: "VIP", price: 30 },
+          { type: "Standard", price: 15 },
+          { type: "Regular", price: 10 },
+        ],
+      },
+      {
+        id: 5,
+        name: "Sam Fender",
+        location: "OVO Hydro | Glasgow",
+        date: "2024-12-16",
+        description: "Join us for an electrifying performance with high energy and an unforgettable set list.", // Unique description
+        image: "sam.jpg",
+        ticketOptions: [
+          { type: "VIP", price: 30 },
+          { type: "Standard", price: 15 },
+          { type: "Regular", price: 10 },
+        ],
+      },
+      {
+        id: 6,
+        name: "Sam Fender",
+        location: "OVO Hydro | Glasgow",
+        date: "2024-12-16",
+        description: "Join us for an electrifying performance with high energy and an unforgettable set list.", // Unique description
+        image: "sam.jpg",
+        ticketOptions: [
+          { type: "VIP", price: 30 },
+          { type: "Standard", price: 15 },
+          { type: "Regular", price: 10 },
+        ],
+      },
+      {
+        id: 7,
+        name: "Sam Fender",
+        location: "OVO Hydro | Glasgow",
+        date: "2024-12-16",
+        description: "Join us for an electrifying performance with high energy and an unforgettable set list.", // Unique description
+        image: "sam.jpg",
+        ticketOptions: [
+          { type: "VIP", price: 30 },
+          { type: "Standard", price: 15 },
+          { type: "Regular", price: 10 },
+        ],
+      },
+      {
+        id: 8,
+        name: "Sam Fender",
+        location: "OVO Hydro | Glasgow",
+        date: "2024-12-16",
+        description: "Join us for an electrifying performance with high energy and an unforgettable set list.", // Unique description
+        image: "sam.jpg",
+        ticketOptions: [
+          { type: "VIP", price: 30 },
+          { type: "Standard", price: 15 },
+          { type: "Regular", price: 10 },
+        ],
+      },
+      {
+        id: 9,
+        name: "Sam Fender",
+        location: "OVO Hydro | Glasgow",
+        date: "2024-12-16",
+        description: "Join us for an electrifying performance with high energy and an unforgettable set list.", // Unique description
+        image: "sam.jpg",
+        ticketOptions: [
+          { type: "VIP", price: 30 },
+          { type: "Standard", price: 15 },
+          { type: "Regular", price: 10 },
+        ],
+      },
+     
     // Add more events with unique images
   ];
 
-  const event = events[0]; // Currently selecting the first event
+  // Find event by ID
+  const event = events.find(event => event.id === parseInt(id));
+
+  if (!event) {
+    return <div>Event not found</div>; // If no event matches the ID, show this message
+  }
 
   const [quantities, setQuantities] = useState({
-    early: 0,
+    regular: 0,
     standard: 0,
-    vip390: 0,
-    vip515: 0,
+    vip: 0,
   });
 
   const [isCheckoutEnabled, setIsCheckoutEnabled] = useState(false);
@@ -69,23 +165,23 @@ const EventDetails = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-white mt-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-white">
       {/* Event Image and Name */}
-      <div className="relative w-full h-96 overflow-hidden rounded-lg shadow-lg mb-8">
-        <img
-          src={event.image} // Unique image for each event
+      <div className="relative h-28 w-full overflow-hidden rounded-lg shadow-lg mb-6">
+        {/* <img
+          src={`/${event.image}`} // Use event-specific image
           alt={event.name}
-          className="w-full h-full object-cover"
-        />
+          className="w-full h-full object-contain"
+        /> */}
         <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold backdrop-blur-lg">
-          {/* {event.name} */}
+          {event.name}
         </div>
       </div>
 
       {/* Event Details */}
-      <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+      <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
         <h2 className="text-3xl font-semibold text-yellow-400 mb-4">{event.name}</h2>
-        <p className="text-lg text-gray-300 mb-2">{event.description}</p>
+        <p className="text-lg text-gray-300 mb-2">{event.description}</p> {/* Description is unique per event */}
         <p className="text-lg text-gray-400">
           <strong>Location:</strong> {event.location}
         </p>
@@ -98,12 +194,12 @@ const EventDetails = () => {
       <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
         <h2 className="text-2xl font-semibold text-yellow-400 mb-6">Tickets</h2>
 
-        {["early", "standard", "vip390", "vip515"].map((ticketType) => {
+        {["regular", "standard", "vip"].map((ticketType) => {
           const ticketOption = event.ticketOptions.find(
             (option) => option.type.toLowerCase() === ticketType
           );
 
-          if (!ticketOption) return null; // Skip undefined ticket options
+          if (!ticketOption) return null;
 
           return (
             <div
@@ -143,7 +239,7 @@ const EventDetails = () => {
         })}
 
         {/* Checkout Button */}
-        <div className="mt-8 text-center">
+        <div className="mt-6 text-center">
           <button
             onClick={handleCheckout}
             disabled={!isCheckoutEnabled}
